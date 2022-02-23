@@ -12,17 +12,17 @@ namespace EF2G.Repository.Entities
         public int UserId { get; set; }
 
         [Required]
-        [Column(TypeName = "datetime2(3)")]
+        //[Column(TypeName = "datetime2(3)")]
         public DateTime InsertDate { get; set; }
 
         [Required]
-        [Column(TypeName = "datetime2(3)")]
+        //[Column(TypeName = "datetime2(3)")]
         public DateTime ModifyDate { get; set; }
 
-        [Column(TypeName = "datetime2(3)")]
+        //[Column(TypeName = "datetime2(3)")]
         public DateTime? ExpirationDate { get; set; }
 
-        [Column(TypeName = "datetime2(3)")]
+        //[Column(TypeName = "datetime2(3)")]
         public DateTime? LastLoginDate { get; set; }
 
         [Required]

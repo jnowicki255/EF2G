@@ -34,13 +34,14 @@ namespace EF2G.Repository
 
                 var dbSettings = configuration.GetSection(SettingsSections.Sql).Get<SqlDbSettings>();
 
-                optionsBuilder.UseSqlServer(dbSettings.ConnectionString);
+                //optionsBuilder.UseSqlServer(dbSettings.ConnectionString);
+                optionsBuilder.UseMySql(dbSettings.ConnectionString, ServerVersion.AutoDetect(dbSettings.ConnectionString));
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Polish_CI_AS");
+            //modelBuilder.HasAnnotation("Relational:Collation", "Polish_CI_AS");
 
             //modelBuilder.Entity<DbUser>(entity =>
             //{
