@@ -1,5 +1,6 @@
 ﻿using EF2G.Repository.Entities;
 using EF2G.Repository.Settings;
+using EF2G.Repository.Seeds;
 using EF2G.Settings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -41,15 +42,12 @@ namespace EF2G.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.HasAnnotation("Relational:Collation", "Polish_CI_AS");
+            SeedDatabase(modelBuilder);
+        }
 
-            //modelBuilder.Entity<DbUser>(entity =>
-            //{
-            //    entity.Property(e => e.InsertDate).HasPrecision(3);
-            //    entity.Property(e => e.ModifyDate).HasPrecision(3);
-            //    entity.Property(e => e.LastLoginDate).HasPrecision(3);
-            //    entity.Property(e => e.ExpirationDate).HasPrecision(3);
-            //});
+        private void SeedDatabase(ModelBuilder modelBuilder)
+        {
+            modelBuilder.UsersSeed();
         }
     }
 }
