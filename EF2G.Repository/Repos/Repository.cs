@@ -14,9 +14,10 @@ namespace EF2G.Repository.Repos
             this.dbContext = dbContext;
         }
 
-        public Task CreateUserAsync(DbUser newUser)
+        public async Task CreateUserAsync(DbUser newUser)
         {
-            throw new System.NotImplementedException();
+            dbContext.Users.Add(newUser);
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<DbUser> GetUserAsync(int userId)
@@ -35,14 +36,28 @@ namespace EF2G.Repository.Repos
             return dbUsers;
         }
 
-        public Task RemoveUserAsync(int userId)
+        public async Task RemoveUserAsync(int userId)
         {
-            throw new System.NotImplementedException();
+            var dbUser = await dbContext.Users
+                .SingleOrDefaultAsync(x => x.UserId == userId);
+
+            dbContext.Users.Remove(dbUser);
+            await dbContext.SaveChangesAsync();
         }
 
-        public Task UpdateUserAsync(DbUser updatedUser)
+        public async Task UpdateUserAsync(DbUser updatedUser)
         {
-            throw new System.NotImplementedException();
+            var dbUser = await dbContext.Users
+                .SingleOrDefaultAsync(x => x.UserId == updatedUser.UserId);
+
+            if (await dbContext.Users.AnyAsync(x => x.Username == updatedUser.Username
+                && x.UserId != updatedUser.UserId))
+                throw new System.Exception(
+                    $"User with username {updatedUser.Username} already exists");
+
+            dbContext.Entry(dbUser).CurrentValues.SetValues(updatedUser);
+            dbUser.ModifyDate = System.DateTime.UtcNow;
+            await dbContext.SaveChangesAsync();
         }
     }
 }
