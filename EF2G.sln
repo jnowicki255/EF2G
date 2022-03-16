@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF2G.Repository", "EF2G.Rep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF2G.Settings", "EF2G.Settings\EF2G.Settings.csproj", "{676E8E04-6DC8-45FE-B62F-01489B404CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF2G.ConsoleApp", "EF2G.ConsoleApp\EF2G.ConsoleApp.csproj", "{27B7F840-207B-4DA9-8983-2F4A703A77A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF2G.ConsoleApp", "EF2G.ConsoleApp\EF2G.ConsoleApp.csproj", "{27B7F840-207B-4DA9-8983-2F4A703A77A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF2G.WebApi", "EF2G.WebApi\EF2G.WebApi.csproj", "{C18F8BF7-AC92-4F6C-A689-03C385FF627C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{27B7F840-207B-4DA9-8983-2F4A703A77A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27B7F840-207B-4DA9-8983-2F4A703A77A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27B7F840-207B-4DA9-8983-2F4A703A77A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C18F8BF7-AC92-4F6C-A689-03C385FF627C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C18F8BF7-AC92-4F6C-A689-03C385FF627C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C18F8BF7-AC92-4F6C-A689-03C385FF627C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C18F8BF7-AC92-4F6C-A689-03C385FF627C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
